@@ -22,7 +22,17 @@ todoRouter.get('/todo/description/:id', async(req, res) => {
   const description = await Todo.findById(req.params.id);
 
   res.json(description);
-})
+});
 
+todoRouter.post('/todo/new', (req, res) => {
+	const todo = new Todo({
+		title: req.body.title,
+    description: req.body.description
+	})
+
+	todo.save();
+
+	res.json(todo);
+});
 
 module.exports = todoRouter;
