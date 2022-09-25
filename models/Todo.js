@@ -10,6 +10,9 @@ const TodoSchema = new Schema({
 		type: Boolean,
 		default: false
 	},
+	completeDate: {
+		type: String
+	},
 	timestamp: {
 		type: String,
 		default: Date.now()
